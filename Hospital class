@@ -1,0 +1,52 @@
+package com.dto.jsp;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+@Entity
+public class Hospital {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int id;
+	private String name;
+	private String founder;
+	private double gst;
+	@OneToOne
+	private Adress a;
+	
+	public Adress getA() {
+		return a;
+	}
+	public void setA(Adress a) {
+		this.a = a;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getFounder() {
+		return founder;
+	}
+	public void setFounder(String founder) {
+		this.founder = founder;
+	}
+	public double getGst() {
+		return gst;
+	}
+	public void setGst(double gst) {
+		this.gst = gst;
+	}
+	
+}
